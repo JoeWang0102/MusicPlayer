@@ -8,7 +8,7 @@ def download(url):
 # for url in Param.downloadLink:
     yt = YouTube(url)
     try:
-        file_name = yt.title.replace('.','').replace('/','').replace('\\','').replace('*','').replace('?','').replace('"','').replace('<','').replace('>','').replace('|','').replace(':','').replace(' ','').replace('&','and')    
+        file_name = yt.title.replace('.','reDot').replace(' ','reSpace').replace('&','reAnd').replace('/','').replace('\\','').replace('*','').replace('?','').replace('"','').replace('<','').replace('>','').replace('|','').replace(':','')
         yt.streams.filter(type="audio").order_by('abr').first().download(output_path=Param.musicPath, filename='audio.mp4')
         yt.streams.filter(type="video").first().download(output_path=Param.musicPath, filename='video.mp4')
         os.chdir(Param.musicPath)
@@ -19,7 +19,7 @@ def download(url):
         os.remove(file_name+'.mp4')
         os.rename(file_name+'.mp3',file_name.replace('and','&')+'.mp3')
         print(file_name,'\ndownload finish')
-        res = file_name.replace('and','&')+'.mp3'
+        res = file_name.replace('reDot','.').replace('reSpace',' ').replace('reAnd','&')+'.mp3'
     except:
         print("%s download failed\n%s"%(file_name,url))
         res = 'False'

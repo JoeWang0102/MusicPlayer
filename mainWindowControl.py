@@ -13,7 +13,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         # self.setWindowFlags(QtCore.Qt.Tool)
         self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
-        self.setWindowOpacity(0.5)
+        # self.setWindowOpacity(0.5)
         # self.setWindowFlags(self.windowFlags() & ~QtCore.Qt.WindowStaysOnTopHint)
         self.currentMusicIdx = 0
         self.playList = []
