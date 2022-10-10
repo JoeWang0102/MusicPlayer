@@ -17,7 +17,7 @@ def download(url):
         os.remove('video.mp4')
         os.remove('audio.mp4')
         os.remove(file_name+'.mp4')
-        os.rename(file_name+'.mp3',file_name.replace('and','&')+'.mp3')
+        os.rename(file_name+'.mp3',file_name.replace('reDot','.').replace('reSpace',' ').replace('reAnd','&')+'.mp3')
         print(file_name,'\ndownload finish')
         res = file_name.replace('reDot','.').replace('reSpace',' ').replace('reAnd','&')+'.mp3'
     except:
